@@ -23,14 +23,12 @@
             perspective: 1000px;
         }
 
-        /* Background Ambient Glow */
         .ambient-glow {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at center, #1a140a 0%, #000 80%);
             z-index: 1; opacity: 0; transition: opacity 2s ease;
         }
 
-        /* Envelope Styling */
         .envelope-wrapper {
             position: relative;
             width: 280px; height: 180px;
@@ -56,7 +54,6 @@
             animation: pulse 2s infinite;
         }
 
-        /* The Card */
         #luxury-card {
             position: fixed;
             width: 90%; max-width: 380px;
@@ -72,7 +69,6 @@
             box-shadow: 0 0 40px rgba(191, 149, 63, 0.2);
         }
 
-        /* Opened State Transitions */
         .opened .ambient-glow { opacity: 1; }
         .opened #envelope { opacity: 0; transform: scale(0.5); pointer-events: none; }
         .opened #luxury-card {
@@ -80,7 +76,6 @@
             transform: scale(1) translateY(0);
         }
 
-        /* Typography & Shimmer */
         .shimmer {
             background: var(--gold);
             -webkit-background-clip: text;
@@ -103,7 +98,6 @@
         .logo-n { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: bold; margin: 0; line-height: 1; }
         .logo-text { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 6px; margin: 0; color: #d4af37; }
 
-        /* New Year Countdown */
         .countdown-container {
             margin-top: 25px;
             border-top: 1px solid rgba(197, 160, 89, 0.2);
@@ -120,7 +114,6 @@
 
         .time-block span { color: #d4af37; font-size: 0.6rem; display: block; margin-top: 2px; }
 
-        /* Gold Dust Particles */
         .particle {
             position: fixed; top: -10px; border-radius: 50%; pointer-events: none;
             animation: fall linear infinite; z-index: 50;
@@ -182,7 +175,6 @@
             const body = document.getElementById('body');
             const audio = document.getElementById("bgMusic");
             
-            // Critical for Mobile: Attempt audio play
             audio.currentTime = 34;
             const playPromise = audio.play();
 
@@ -190,7 +182,7 @@
                 playPromise.then(_ => {
                     executeReveal();
                 }).catch(error => {
-                    // Even if audio fails (silent mode), reveal the card
+
                     executeReveal();
                 });
             }
@@ -236,4 +228,5 @@
         }
     </script>
 </body>
+
 </html>
